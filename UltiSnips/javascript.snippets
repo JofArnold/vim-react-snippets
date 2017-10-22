@@ -261,12 +261,11 @@ snippet pp "Get Props"
 ${props => props.${1}};
 endsnippet
 
-
-snippet gql "GraphQL Query" w
-const ${1} = gql`
-  query ${2} {
-		...${3:`!v expand('%:t:r')`}
-  }
-  ${${3}}
-`;
+snippet gql "GraphQL Query"
+const ${1} = gql\`
+	query ${2} \{
+		...${3}
+	\}
+	$\{$3\}
+\`;
 endsnippet
