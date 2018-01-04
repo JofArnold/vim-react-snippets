@@ -6,27 +6,27 @@ import PropTypes from "prop-types";
 // import cns from "classnames";
 
 class ${1:`!v expand('%:t:r')`} extends Component {
-	static propTypes = {
-		children: PropTypes.node,
-		className: PropTypes.string,
-		dispatch: PropTypes.func.isRequired,
-	};
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+    dispatch: PropTypes.func.isRequired,
+  };
 
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render() {
-		return (
-			<div className={}>
-				$3
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className={}>
+        $3
+      </div>
+    );
+  }
 }
 
 function mapStateToProps(state) {
-	return {};
+  return {};
 }
 
 export default connect(mapStateToProps)($1);
@@ -38,45 +38,93 @@ import PropTypes from "prop-types";
 // import cns from "classnames";
 
 class ${1:`!v expand('%:t:r')`} extends Component {
-	static propTypes = {
-		children: PropTypes.node,
-		className: PropTypes.string,
-	};
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+  };
 
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render() {
-		return (
-			<div className={}>
-				$3
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className={}>
+        $3
+      </div>
+    );
+  }
 }
 
 export default $1;
 endsnippet
 
+snippet rccb "React Class Component - Brisket" b
+// @flow
+import React, { Component } from "react"
+import type { Node } from "react"
+// import cns from "classnames"
+
+declare type Props = {
+  children?: Node;
+}
+
+class ${1} extends Component<Props> {
+  constructor(props: Props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className="">
+        $3
+      </div>
+    )
+  }
+}
+
+export default $1
+endsnippet
+
+snippet rccib "React Class Component Inline - Brisket" b
+// @flow
+import React from "react"
+import type { Node } from "react"
+// import cns from "classnames"
+
+declare type Props = {
+  children?: Node;
+}
+
+const ${1} = (props: Props) => {
+  return (
+    <div className="">
+      $3
+    </div>
+  )
+}
+
+export default $1
+endsnippet
+
 snippet rcci "React Class Component Inline" b
 class ${1} extends Component {
-	static propTypes = {
-		children: PropTypes.node,
-		className: PropTypes.string,
-	};
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+  };
 
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	render() {
-		return (
-			<div className={}>
-				$3
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className={}>
+        $3
+      </div>
+    );
+  }
 }
 endsnippet
 
@@ -86,11 +134,11 @@ import PropTypes from "prop-types";
 // import cns from "classnames";
 
 const ${1:`!v expand('%:t:r')`} = (${3:{}}) => {
-	return (
-		<div className={}>
-			$4
-		</div>
-	);
+  return (
+    <div className={}>
+      $4
+    </div>
+  );
 }
 
 $1.defaultProps = {};
@@ -103,11 +151,11 @@ endsnippet
 snippet rfci "React Functional Component Inline" b
 
 const ${1} = (${3:{}}) => {
-	return (
-		<div className={}>
-			$4
-		</div>
-	);
+  return (
+    <div className={}>
+      $4
+    </div>
+  );
 }
 endsnippet
 
@@ -115,7 +163,7 @@ snippet rsc "React Styled Component" b
 import styled from "styled-components";
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`
-	$3
+  $3
 \`;
 
 export default $1;
@@ -125,9 +173,9 @@ snippet rsci "React Styled Component Interpolation" b
 import styled, { css } from "styled-components";
 
 const ${1:`!v expand('%:t:r')`} = styled.${2:div}\`${props => css\`
-	${3:${props.$4 && \`
-		$5
-	\`}}
+  ${3:${props.$4 && \`
+    $5
+  \`}}
 \`}\`;
 
 export default $1;
@@ -143,13 +191,13 @@ endsnippet
 
 snippet dp "Default Props" b
 ${1:`!v expand('%:t:r')`.}defaultProps = {
-	$2
+  $2
 };
 endsnippet
 
 snippet set "Set State"
 this.setState({
-	${1}: ${2}
+  ${1}: ${2}
 });
 endsnippet
 
@@ -169,51 +217,51 @@ endsnippet
 # Component Lifecycle
 snippet cwm "Component Will Mount" b
 componentWillMount() {
-	$1
+  $1
 }
 endsnippet
 
 snippet cdm "Component Did Mount" b
 componentDidMount() {
-	$1
+  $1
 }
 endsnippet
 
 snippet cwrp "Component Will Receive Props" b
 componentWillReceiveProps(nextProps) {
-	$1
+  $1
 }
 endsnippet
 
 snippet scup "Should Component Update" b
 shouldComponentUpdate(nextProps, nextState) {
-	$1
+  $1
 }
 endsnippet
 
 snippet cwup "Component Will Update" b
 componentWillUpdate(nextProps, nextState) {
-	$1
+  $1
 }
 endsnippet
 
 snippet cdup "Component Did Update" b
 componentDidUpdate(prevProps, prevState) {
-	$1
+  $1
 }
 endsnippet
 
 snippet cwu "Component Will Unmount" b
 componentWillUnmount() {
-	$1
+  $1
 }
 endsnippet
 
 snippet ren "Render"
 render() {
-	return ${1:(
-		${2:<div>${3}</div>}
-	);}
+  return ${1:(
+    ${2:<div>${3}</div>}
+  );}
 }
 endsnippet
 
@@ -221,7 +269,7 @@ endsnippet
 # PropTypes
 snippet pt "PropTypes Definition" b
 ${1:`!v expand('%:t:r')`.}propTypes = {
-	${2:className}: ${3:PropTypes.string},
+  ${2:className}: ${3:PropTypes.string},
 };
 endsnippet
 
@@ -267,7 +315,7 @@ endsnippet
 
 snippet pt.onet "PropTypes oneOfType" w
 PropTypes.oneOfType([
-	$2
+  $2
 ])${1:,}
 endsnippet
 
@@ -281,7 +329,7 @@ endsnippet
 
 snippet pt.sh "PropTypes Shape" w
 PropTypes.shape({
-	$2
+  $2
 })${1:,}
 endsnippet
 
@@ -299,9 +347,9 @@ endsnippet
 
 snippet gql "GraphQL Query"
 const ${1} = gql\`
-	query ${2} \{
-		...${3}
-	\}
-	$\{$3\}
+  query ${2} \{
+    ...${3}
+  \}
+  $\{$3\}
 \`;
 endsnippet
